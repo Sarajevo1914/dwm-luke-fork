@@ -1,5 +1,9 @@
 # Fork of Luke's build of dwm
 
+I tried to create my own build from scratch but I got tired of having so many errors after applying more than 3 patches, then I kept trying with dwm-flexipatch but for some reason I can't get it to work, I still have compilation errors and although I manage to correct them, modify the config.h is a pain in the ass, so the only thing I can think of is to modify an already made base, in this case Luke Smith's build, I know that Derek Tyler also has his own build but DTOS is a bit bloat, my machine literally explodes With so many resources and things in the background, I could try to use its build separately but there are two reasons why I didn't.
+1. I want to experience the full DTOS experience and not just a small part
+2. I'm a lazy wanker
+
 
 ## Patches and features (from original luke)
 
@@ -25,8 +29,8 @@
 ## Installation for newbs
 
 ```bash
-git clone https://github.com/sarajevo/dwm.git
-cd dwm
+git clone https://github.com/Sarajevo1914/dwm-luke-fork.git
+cd dwm-luke-fork
 sudo make install
 ```
 
