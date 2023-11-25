@@ -200,7 +200,7 @@ static const Key keys[] = {
 /// LAUNCHERS
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		{.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
-	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ FILEMANAGER, NULL } } },
+	{ MODKEY,			XK_d,		spawn,		{.v = (const char*[]){ FILEMANAGER, NULL } } },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
 	{ MODKEY,			XK_F9,		spawn,		{.v = (const char*[]){ "mounter", NULL } } },
