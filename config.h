@@ -96,6 +96,7 @@ static const Layout layouts[] = {
 #define STACKKEYS(MOD,ACTION) \
 	{ MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
 	{ MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
+	{ MOD,	XK_c,	ACTION##stack,	{.i = INC(-1) } }, \
 	{ MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
 	/* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
 	/* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
@@ -141,7 +142,7 @@ static const Key keys[] = {
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 /// BASICS
-	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },	
+	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY,			XK_space,	spawn,          {.v = (const char*[]){ "dmenu_run", NULL } } },
 
@@ -164,10 +165,10 @@ static const Key keys[] = {
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	{ MODKEY,			XK_Tab,	view,		{0} },
 
-	{ ALTKEY,					XK_j,	shiftview,	{ .i = -1 } },
-	{ ALTKEY|ShiftMask,				XK_j,	shifttag,   { .i = -1 } },
-	{ ALTKEY,					XK_k,	shiftview,	{ .i = +1 } },
-	{ ALTKEY|ShiftMask,				XK_k,	shifttag,   { .i = +1 } },
+	{ ALTKEY,					XK_j,	shiftview, { .i = -1 } },
+	{ ALTKEY|ShiftMask,				XK_j,	shifttag,  { .i = -1 } },
+	{ ALTKEY,					XK_k,	shiftview, { .i = +1 } },
+	{ ALTKEY|ShiftMask,				XK_k,	shifttag,  { .i = +1 } },
 
 	{ MODKEY|ControlMask,           XK_j,  focusmon,       {.i = -1 } },
 	{ MODKEY|ShiftMask|ControlMask, XK_j,  tagmon,         {.i = -1 } },
@@ -192,13 +193,14 @@ static const Key keys[] = {
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
-	
+
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_s,		setlayout,	{.v = &layouts[8]} },
-	
+
 /// LAUNCHERS
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		{.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ FILEMANAGER, NULL } } },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
 	{ MODKEY,			XK_F9,		spawn,		{.v = (const char*[]){ "mounter", NULL } } },
